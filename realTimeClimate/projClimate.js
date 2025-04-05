@@ -24,9 +24,13 @@ const getWeather = async (city) => {
         else
         {
             const weatherData = await response.json();
-            console.log(weatherData);
-            // // // Here, we are getting the Output on Terminal as :- 
-            // // // Getting the whole data from server;
+            // console.log(weatherData);
+            console.log(`\nWeather Information of your City :- `);
+            console.log(`City Name : ${weatherData.name}`);
+            console.log(`Temperature : ${weatherData.main.temp}°C`);
+            console.log(`Description : ${weatherData.weather[0].description}`);
+            console.log(`Humidity : ${weatherData.main.humidity}`);
+            console.log(`Wind Speed : ${weatherData.wind.speed}`);
         }
     } catch (err) {
         console.log(err);
@@ -36,3 +40,13 @@ const getWeather = async (city) => {
 const city = await lineReader.question(`Enter a city name to get its weather : `);
 await getWeather(city);
 lineReader.close();
+// // // Here, we are getting the Output on Terminal as :- 
+// // // Enter a city name to get its weather : guna
+
+// // // Weather Information of your City :- 
+// // // City Name : Guna       
+// // // Temperature : 33.85°C  
+// // // Description : clear sky
+// // // Humidity : 11
+// // // Wind Speed : 4.29      
+// // // Completed running 'projClimate.js'
