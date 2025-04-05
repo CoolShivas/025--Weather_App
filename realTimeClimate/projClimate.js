@@ -14,6 +14,12 @@ const Base_URL = `https://api.openweathermap.org/data/2.5/weather`;
 
 const getWeather = async (city) => {
     const url = `${Base_URL}?q=${city}&appid=${API_Key}&units=metric`;
+
+    try {
+        const response = await fetch(url);
+    } catch (err) {
+        console.log(err);
+    }
 };
 
 const city = await lineReader.question(`Enter a city name to get its weather : `);
