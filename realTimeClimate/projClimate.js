@@ -5,3 +5,9 @@ const lineReader = readline.createInterface({
     input : process.stdin,
     output : process.stdout
 });
+
+
+// // // Open weather map Api's details :-
+const API_Key = `3aa94f962094ae7c82dcebf7d91b85e0`;
+const Base_URL = `https://api.openweathermap.org/data/2.5/weather`;
+
