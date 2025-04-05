@@ -17,6 +17,17 @@ const getWeather = async (city) => {
 
     try {
         const response = await fetch(url);
+        if(!response.ok)
+        {
+            throw new Error(`City not found. Please check the city name.`);
+        }
+        else
+        {
+            const weatherData = await response.json();
+            console.log(weatherData);
+            // // // Here, we are getting the Output on Terminal as :- 
+            // // // Getting the whole data from server;
+        }
     } catch (err) {
         console.log(err);
     }
@@ -25,7 +36,3 @@ const getWeather = async (city) => {
 const city = await lineReader.question(`Enter a city name to get its weather : `);
 await getWeather(city);
 lineReader.close();
-
-// // // Here, we are getting the Output on Terminal as :-
-// // // Enter a city name to get its weather : guna
-// // // Completed running 'projClimate.js'
